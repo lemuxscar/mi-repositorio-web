@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi pagina JS simple</title>
+    <style>
+        /* Estilo básico del div */
+        #caja {
+            width: 200px;
+            padding: 10px;
+            background-color: lightgray;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        /* Clase que se agrega al pasar el mouse */
+        .nuevoEstilo {
+            background-color: yellow;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mi ejemplo JS en un solo archivo</h1>
+
+    <!-- Div -->
+    <div id="caja">Soy un div</div>
+
+    <!-- Parrafo -->
+    <p id="texto">Este es un parrafo</p>
+
+    <!-- Boton -->
+    <button id="boton">Cambiar texto</button>
+
+    <!-- Lista -->
+    <ul id="lista">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+
+    <script>
+        // cuando cargue la pagina
+        window.onload = function() {
+            // selecciono elementos
+            const boton = document.getElementById("boton");
+            const texto = document.getElementById("texto");
+            const caja = document.getElementById("caja");
+            const lista = document.getElementById("lista");
+
+            // cambiar texto al hacer click
+            boton.addEventListener("click", function() {
+                texto.textContent = "El texto cambio";
+            });
+
+            // agregar clase al pasar el mouse
+            caja.addEventListener("mouseover", function() {
+                caja.classList.add("nuevoEstilo");
+            });
+
+            // agregar un li a la lista cuando cargue
+            const liNuevo = document.createElement("li");
+            liNuevo.textContent = "Item nuevo";
+            lista.appendChild(liNuevo);
+        };
+    </script>
+</body>
+</html>
